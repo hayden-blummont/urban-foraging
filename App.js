@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button
+} from 'react-native';
 
 export default class App extends React.Component {
   render() {
@@ -8,6 +13,7 @@ export default class App extends React.Component {
         <Text>Fuck Yeah</Text>
         <Text>Do it bitches.</Text>
         <Text>Shake your phone to open the developer menu.</Text>
+        <Button title="Enter">Enter</Button>
       </View>
     );
   }
@@ -19,5 +25,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    fontWeight: 'bold',
+    color: '#56D150',
+    fontSize: 30,
   },
 });
