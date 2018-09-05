@@ -1,34 +1,29 @@
 import React from 'react';
 import {
+  Platform,
   StyleSheet,
   Text,
-  View,
-  Button
+  View
 } from 'react-native';
+
+import Settings from './screens/Settings'
+import Home from './screens/Home'
+import Profile from './screens/Profile'
+
+import {
+  createStackNavigator,
+} from 'react-navigation';
+
+const AppNavigator = createStackNavigator({
+  SettingsScreen: { screen: Settings },
+  HomeScreen: { screen: Home },
+  ProfileScreen: { screen: Profile },
+});
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Fuck Yeah</Text>
-        <Text>Do it bitches.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Button title="Enter">Enter</Button>
-      </View>
-    );
+      <AppNavigator />
+    )
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontWeight: 'bold',
-    color: '#56D150',
-    fontSize: 30,
-  },
-});
+};
